@@ -23,7 +23,10 @@ div.container{
     width:fit-content;
   
 
- 
+div.option:hover{
+    background-color: antiquewhite;
+    color: black;
+ }
   
     
 }

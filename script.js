@@ -56,8 +56,8 @@ const question2 = [q2text, q2opt]
 var quizPool = [question1, question2]
 //load in the question set 
 
-var butt = document.getElementsByClassName('option')
-butt[0].addEventListener('click', () => triggerNextSlid())
+var butt = document.getElementById('startBut')
+butt.addEventListener('click', () => triggerNextSlid())
 //button start!
 
 var i = 0;
@@ -70,6 +70,7 @@ function appendOptions(){
     const yepTheContainer = document.getElementsByClassName('container')
     const option1 = document.createElement('button')
     option1.classList.add('option')
+    option1.classList.add('option1')
     //gen new element
     const opt1Text = document.createTextNode(quizPool[i][1][0].text)
     //gen content
@@ -78,6 +79,7 @@ function appendOptions(){
 
     const option2 = document.createElement('button')
     option2.classList.add('option')
+    option2.classList.add('option2')
     //gen new element
     const opt2Text = document.createTextNode(quizPool[i][1][1].text)
     //gen content
@@ -86,6 +88,7 @@ function appendOptions(){
 
     const option3 = document.createElement('button')
     option3.classList.add('option')
+    option3.classList.add('option3')
     //gen new element
     const opt3Text = document.createTextNode(quizPool[i][1][2].text)
     //gen content
@@ -94,6 +97,7 @@ function appendOptions(){
 
     const option4 = document.createElement('button')
     option4.classList.add('option')
+    option4.classList.add('option4')
     //gen new element
     const opt4Text = document.createTextNode(quizPool[i][1][3].text)
     //gen content
@@ -116,11 +120,12 @@ function triggerNextSlid(){
             clearOpt()
     }
     i += 1
+
 }
 
 
 function clearStartBut(){
-    butt[0].remove()
+    butt.remove()
 }
 
 function clearOpt(){
@@ -131,6 +136,19 @@ function clearOpt(){
 }
 console.log(`this is question 2 ${quizPool[1],quizPool}`)
 
+function assignEvLisner(){
+    let allOptions = document.getElementsByClassName('option')
+    console.log(allOptions)
+    for(let i =0; i=4; i++){
+        console.log(allOptions[i])
+        allOptions[i].addEventListener('click',testRightCheck)
+}
+}
+//test right answer
+
+function testRightCheck(){
+    console.log('yeo yep')
+}
 
 
 
