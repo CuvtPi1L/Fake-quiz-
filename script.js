@@ -71,7 +71,7 @@ function appendOptions(){
     const option1 = document.createElement('button')
     option1.classList.add('option')
     //gen new element
-    const opt1Text = document.createTextNode(quizPool[i][1][1].text)
+    const opt1Text = document.createTextNode(quizPool[i][1][0].text)
     //gen content
     option1.appendChild(opt1Text)
     yepTheContainer[0].appendChild(option1)
@@ -79,15 +79,15 @@ function appendOptions(){
     const option2 = document.createElement('button')
     option2.classList.add('option')
     //gen new element
-    const opt2Text = document.createTextNode(quizPool[i][1][2].text)
+    const opt2Text = document.createTextNode(quizPool[i][1][1].text)
     //gen content
-    option1.appendChild(opt2Text)
+    option2.appendChild(opt2Text)
     yepTheContainer[0].appendChild(option2)
 
     const option3 = document.createElement('button')
     option3.classList.add('option')
     //gen new element
-    const opt3Text = document.createTextNode(quizPool[i][1][3].text)
+    const opt3Text = document.createTextNode(quizPool[i][1][2].text)
     //gen content
     option3.appendChild(opt3Text)
     yepTheContainer[0].appendChild(option3)
@@ -95,36 +95,42 @@ function appendOptions(){
     const option4 = document.createElement('button')
     option4.classList.add('option')
     //gen new element
-    const opt4Text = document.createTextNode(quizPool[i][1][4].text)
+    const opt4Text = document.createTextNode(quizPool[i][1][3].text)
     //gen content
     option4.appendChild(opt4Text)
     yepTheContainer[0].appendChild(option4)
 }
-
+//checking stuff
+console.log(`Chekcing stuff${quizPool[i][1][3].text}`)
 var texttext = document.getElementsByClassName('question')
+
+//operation function
 function triggerNextSlid(){
-   
+    clearStartBut()
     console.log(quizPool[i],i,quizPool)
     printQuestionText()
     appendOptions()
     //more stuff goes in here
+    switch(i=0){
+        case false:
+            clearOpt()
+    }
     i += 1
 }
 
 
+function clearStartBut(){
+    butt[0].remove()
+}
+
+function clearOpt(){
+    option1.remove()
+    option2.remove()
+    option3.remove()
+    option4.remove()
+}
 console.log(`this is question 2 ${quizPool[1],quizPool}`)
 
 
-
-
-
-
-localStorage.setItem('myJeb','tom');
-const cat = localStorage.getItem('myJeb')
-
-
-function startQuizSet(){
-    
-}
 
 

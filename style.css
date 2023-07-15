@@ -20,7 +20,7 @@ div.container{
     color: aliceblue;
     background-color: blueviolet;
     font-size: 25px;
-    width: min-content;
+    width:fit-content;
   
 
  
